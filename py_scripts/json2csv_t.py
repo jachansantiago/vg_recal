@@ -6,8 +6,8 @@ This script convert test data from json format to csv format.
 from load_data import *
 import os
 
-DIR = "data/test_gamcompare/json/"
-CSV_DIR = "data/test_gamcompare/csv/"
+DIR = "../data/test_gamcompare/json/"
+CSV_DIR = "../data/test_gamcompare/csv/"
 test_files = os.listdir(DIR)
 
 for file in test_files:

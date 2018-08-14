@@ -24,10 +24,10 @@ def encodePhed(x):
 # In[10]:
 
 
-train_file_placeholder = "data/train_gamcompare/json/compared_mapped{}_sim{}.json"
-test_file_placeholder = "data/test_gamcompare/json/tcompared_tmapped{}_tsim{}.json"
-model_file_placeholder = "models/model_len{}.h5"
-tsv_file_placeholder = "tsv/tcompared_tmapped{}_tsim{}.tsv"
+train_file_placeholder = "../data/train_gamcompare/json/compared_mapped{}_sim{}.json"
+test_file_placeholder = "../data/test_gamcompare/json/tcompared_tmapped{}_tsim{}.json"
+model_file_placeholder = "../data/models/model_len{}.h5"
+tsv_file_placeholder = "../data/stats/test/tcompared_tmapped{}_tsim{}.tsv"
 
 
 # In[11]:

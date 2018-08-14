@@ -5,7 +5,7 @@ import re
 # train files regex
 tsv_regex = re.compile(".*.tsv")
 
-DIR="sims/stats/test/"
+DIR="../data/stats/test/"
 files = os.listdir(DIR)
 
 tsv_fn = list(filter(tsv_regex.match, files))

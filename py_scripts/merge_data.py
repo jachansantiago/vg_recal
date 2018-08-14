@@ -5,7 +5,7 @@ import os
 import numpy as np
 import pandas as pd
 
-DIR = "data/test_gamcompare/csv/"   #FILE can be TRAINING OR TEST DATA
+DIR = "../data/test_gamcompare/csv/"   #FILE can be TRAINING OR TEST DATA
 
 OUTPUT_FILE = "big_bow_df_test.csv"
 

@@ -229,8 +229,8 @@ def output_tsv(df, pred):
 
 if __name__ == "__main__":
     
-    train_file = "sims/train_gamcompare/json/compared_mapped100_sim100.json"
-    test_file = "sims/test_gamcompare/json/tcompared_tmapped100_tsim100.json"
+    train_file = "data/train_gamcompare/json/compared_mapped100_sim100.json"
+    test_file = "data/test_gamcompare/json/tcompared_tmapped100_tsim100.json"
     X_train, y_train, X_val, y_val, orig_tsv, score_div = get_train_data(train_file, debug=False, bow=True)
     X_test, y_test, orig, test_orig_tsv = get_test_data(test_file, score_div, bow=True)
     

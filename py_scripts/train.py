@@ -1,3 +1,7 @@
+"""
+This file train one model per base pair length in mapping quality.
+"""
+
 from load_data import *
 from models import *
 import datetime
@@ -7,14 +11,14 @@ def time_log():
     dformat = "%Y-%b-%d_%I:%M"
     return datetime.datetime.now().strftime(dformat)
 
-TRAIN_DIR = 'sims/train_gamcompare/json/'
-TEST_DIR = 'sims/test_gamcompare/json/'
+TRAIN_DIR = 'data/train_gamcompare/json/'
+TEST_DIR = 'data/test_gamcompare/json/'
 train_files = os.listdir(TRAIN_DIR)
 test_files = os.listdir(TEST_DIR)
 
-test_tsv_file_placeholder = "sims/stats/test/{}.tsv"
-train_tsv_file_placeholder = "sims/stats/train/{}.tsv"
-model_file_placeholder = "sims/models/{}__model_{}.h5"
+test_tsv_file_placeholder = "data/stats/test/{}.tsv"
+train_tsv_file_placeholder = "data/stats/train/{}.tsv"
+model_file_placeholder = "data/models/{}__model_{}.h5"
 
 sorted(train_files)
 sorted(test_files)

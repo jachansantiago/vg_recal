@@ -18,7 +18,7 @@ More info about how works [click here](https://github.com/binarySequoia/vg_recal
            
 
 ## Getting Started
-This repo cotains three folders that are part of our tools for this project. 
+This repo contains three folders that are part of our tools for this project. 
 - **notebooks** : are Jupyter notebooks with data processing pipeline, keras models, and analysis. 
 - **py_scripts**: this python scripts contains training model pipeline, keras models, data generation, shell script generation and stats generation. 
 - **scripts** : this contains useful automatize code, for data generation, data labeling, and models using vowpal_wabbit inside vg.

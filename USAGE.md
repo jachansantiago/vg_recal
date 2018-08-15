@@ -3,10 +3,15 @@ Instruction to runs this experiments.
 More info about how works [click here](https://github.com/binarySequoia/vg_recal#characterizing-mapping-quality-recalibration-approaches-in-a-variant-graph-genomics-tool).
 
 ## TABLE OF CONTENTS
-- [Getting Started](#GettingStarted)
+- [Getting Started](#Getting_Started)
     * [Dependecies](#Dependecies)
     * [Install](#Install)
-    * [Get Data](#GetData)
+    * [Get Data](#Get_Data)
+- [Building a vg Graph](#Building-a-vg-graph)
+- [Reads Simulation](#Reads-Simulation)
+    * [Data Generation](#Training-and-testing-data-generation)
+    * [Data Labeling](#Label-training-and-testing data)
+   
            
 
 ## Getting Started
@@ -40,8 +45,8 @@ If you want to know more about vg functionalities, please go to [vg](https://git
 
 ***NOTE:  The data folder already contains the xg and gcsa files to work.***
 
-### Reads Simulation
-#### Training and testing data generation
+## Reads Simulation
+### Training and testing data generation
 
 To generate data we are using _vg sim_.
 <pre><code>vg sim -x <i>[xg file]</i> -n <i>[data size]</i> -l <i>[read size]</i> \
@@ -57,7 +62,7 @@ vg sim -x data/genome_data/snp1kg-CHR21.xg -n 1000000 -l 100 -i 0.001 --sub-rate
 ```
 These scripts create a 1,000,000 reads for testing and training. Each read has 100 base pair with a error sample of 0.01.
 
-#### Label training and testing data
+### Label training and testing data
 After run _vg sim_ we have simulated reads that are similar to some region in the genome graph but not the same. Now for label the read we are will try map those reads back to the same place in the graph. If a read is map in the same place we label that read as correct, if not we label that read as incorrect.
 
 Now, for do that we need to use _vg map_ and _vg annotate_.

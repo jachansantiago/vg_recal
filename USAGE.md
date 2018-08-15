@@ -10,7 +10,7 @@ More info about how works [click here](https://github.com/binarySequoia/vg_recal
 - [Building a vg Graph](#building-a-vg-graph)
 - [Reads Simulation](#reads-simulation)
     * [Data Generation](#training-and-testing-data-generation)
-    * [Data Labeling](#Label-training-and-testing-data)
+    * [Data Labeling](#label-training-and-testing-data)
    
            
 

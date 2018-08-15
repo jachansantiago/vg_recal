@@ -1,6 +1,7 @@
 # USAGE
 Instruction to runs this experiments.
 More info about how works [click here](https://github.com/binarySequoia/vg_recal#characterizing-mapping-quality-recalibration-approaches-in-a-variant-graph-genomics-tool).
+
 ### Dependecies
 * [vg](https://github.com/vgteam/vg)
 * Jupyter Notebook
@@ -55,13 +56,26 @@ Now, for do that we need to use _vg map_ and _vg annotate_.
 <pre><code>vg map -x <i>[xg file]</i> -g <i>[gcsa file]</i> -G simulated.gam | vg annotate -x <i>[xg file]</i>  -a - -p > mapped.gam</code></pre>
 
 
-To label our training amd testing reads we run:
+To Mapping our training amd testing reads we run:
 ```bash
-# Generate Training data
+# Mapping Training data
 vg map -x data/genome_data/snp1kg-CHR21.xg -g data/genome_data/snp1kg-CHR21.gcsa 
      -G train_sim_len100.gam | vg annotate -x -x data/genome_data/snp1kg-CHR21.xg  -a - -p > train_mapped_len100.gam
-# Genearte Testing data
+# Mapping Testing data
 vg map -x data/genome_data/snp1kg-CHR21.xg -g data/genome_data/snp1kg-CHR21.gcsa 
      -G test_sim_len100.gam | vg annotate -x -x data/genome_data/snp1kg-CHR21.xg  -a - -p > test_mapped_len100.gam
 ```
+After have these mapping, now we can label them.
+<pre><code>vg gamcompare -r <i>[distance threshold]</i> mapped.gam simulated.gam > labeled.gam</code></pre>
+
+The distance threshold means distance within which to consider reads correct.
+
+For label our data we run:
+```bash
+# Label Train reads
+vg gamcompare -r 100 train_mapped_len100.gam train_sim_len100.gam > train_compared_len100.gam
+# Label Test reads
+vg gamcompare -r 100 test_mapped_len100.gam test_sim_len100.gam > test_compared_len100.gam
+```
+
 

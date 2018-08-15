@@ -3,14 +3,14 @@ Instruction to runs this experiments.
 More info about how works [click here](https://github.com/binarySequoia/vg_recal#characterizing-mapping-quality-recalibration-approaches-in-a-variant-graph-genomics-tool).
 
 ## TABLE OF CONTENTS
-- [Getting Started](#Getting_Started)
-    * [Dependecies](#Dependecies)
-    * [Install](#Install)
-    * [Get Data](#Get_Data)
-- [Building a vg Graph](#Building-a-vg-graph)
-- [Reads Simulation](#Reads-Simulation)
-    * [Data Generation](#Training-and-testing-data-generation)
-    * [Data Labeling](#Label-training-and-testing data)
+- [Getting Started](#getting_started)
+    * [Dependecies](#dependecies)
+    * [Install](#install)
+    * [Get Data](#get-data)
+- [Building a vg Graph](#building-a-vg-graph)
+- [Reads Simulation](#reads-simulation)
+    * [Data Generation](#training-and-testing-data-generation)
+    * [Data Labeling](#Label-training-and-testing-data)
    
            
 

@@ -14,6 +14,6 @@ Instruction to runs this experiments.
 
 ### Get Data
 ```
-  cd VG_Recal
+  cd vg_recal
   wget -r -np -nH --cut-dirs=3 -R "index.html*" http://public.gi.ucsc.edu/~anovak/outbox/jeffrey/data/
 ```

@@ -13,3 +13,4 @@ This notebook take outputs tsv files from models to measure their performance us
 This notebook take outputs tsv files from models to measure their performance using Brier score. Note that the tsv file has a particular format, you need to consider that if you want to measure a new model. We use this notebook only to measure testing data. This script loads tsv files from `data/stats/test` by default.
 
 ## [merge_data.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/merge_data.ipynb)
+This notebook contains a script that takes training or testing data with different base pairs size and merge together in one csv.

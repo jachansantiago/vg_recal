@@ -9,7 +9,7 @@ Instruction to runs this experiments.
 
 ### Install
 ```
-  git clone https://github.com/binarySequoia/VG_Recal.git
+  git clone https://github.com/binarySequoia/vg_recal.git
 ```
 
 ### Get Data

@@ -4,7 +4,7 @@ This is experiemt to measuare performance in vg recalibrate, testing different m
 ## Motivation
 Identifying DNA patterns can tell us useful information about any living being. Closely related organisms have similar DNA, while distantly related organisms have few similarities. Humans have extremely similar genomes; studying differences can help to identify particular variants that can cause illness. Vg is a variant graph-based alignment tool for DNA mapping using graph genome references; these graphs capture variation information from populations, which allows more accurate genome studies.
 
-## [vg](https://github.com/vgteam/vg#vg)
+## <a href="https://github.com/vgteam/vg#vg" target="_blank">vg</a>
 
 Vg is a set of tools for working with genome variation graphs. These graphs consist of a set of nodes and edges, where each node represents a DNA sequence; edges, connections between two nodes, can be seen as  concatenations of two sequences. We built VG graphs with genome references and their sequence variations. Because of the variation we have multiple paths through the graph, this means from a particular sequence you could have multiple edges to take.
 

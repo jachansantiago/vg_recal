@@ -3,7 +3,7 @@ Instruction to runs this experiments.
 More info about how works [click here](https://github.com/binarySequoia/vg_recal#characterizing-mapping-quality-recalibration-approaches-in-a-variant-graph-genomics-tool).
 
 ## TABLE OF CONTENTS
-- [Getting Started](#getting_started)
+- [Getting Started](#getting-started)
     * [Dependecies](#dependecies)
     * [Install](#install)
     * [Get Data](#get-data)
@@ -11,15 +11,24 @@ More info about how works [click here](https://github.com/binarySequoia/vg_recal
 - [Reads Simulation](#reads-simulation)
     * [Data Generation](#training-and-testing-data-generation)
     * [Data Labeling](#label-training-and-testing-data)
+- [jupyter notebook](#notebooks)
+- [py_scripts](#py_scripts)
+- [scripts](#scripts)
    
            
 
 ## Getting Started
+This repo cotains three folders that are part of our tools for this project. 
+- **notebooks** : are Jupyter notebooks with data processing pipeline, keras models, and analysis. 
+- **py_scripts**: this python scripts contains training model pipeline, keras models, data generation, shell script generation and stats generation. 
+- **scripts** : this contains useful automatize code, for data generation, data labeling, and models using vowpal_wabbit inside vg.
+
 
 ### Dependecies
 * [vg](https://github.com/vgteam/vg)
 * Jupyter Notebook
 * SciPy
+* Keras
 * R 
 
 ### Install
@@ -91,5 +100,12 @@ vg gamcompare -r 100 train_mapped_len100.gam train_sim_len100.gam > train_compar
 # Label Test reads
 vg gamcompare -r 100 test_mapped_len100.gam test_sim_len100.gam > test_compared_len100.gam
 ```
+## Notebooks
+We have jupyter notebooks, that are part of our pipeline. If you want know more about it go to [`notebooks`](https://github.com/binarySequoia/vg_recal/tree/master/notebooks#notebooks)
 
 
+## py_scripts
+We have python scripts that are part of our pipeline. Some of those script are the same as jupyter notebook but wrote as script to be able to run it as background job. If you want know more about it go to [`py_scripts`](https://github.com/binarySequoia/vg_recal/tree/master/py_scripts)
+
+## scripts
+We have shell scripts that are part of our pipeline. Here you can found scripts for data generation and data labeling using vg. Logistic regression using vowpal-wabbit were trained and testing using these scripts.  If you want know more about it go to [`scripts`](https://github.com/binarySequoia/vg_recal/tree/master/scripts)

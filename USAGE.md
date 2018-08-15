@@ -2,6 +2,15 @@
 Instruction to runs this experiments.
 More info about how works [click here](https://github.com/binarySequoia/vg_recal#characterizing-mapping-quality-recalibration-approaches-in-a-variant-graph-genomics-tool).
 
+## TABLE OF CONTENTS
+- [Getting Started](#GettingStarted)
+    * [Dependecies](#Dependecies)
+    * [Install](#Install)
+    * [Get Data](#GetData)
+           
+
+## Getting Started
+
 ### Dependecies
 * [vg](https://github.com/vgteam/vg)
 * Jupyter Notebook
@@ -19,7 +28,7 @@ cd vg_recal
 wget -r -np -nH --cut-dirs=3 -R "index.html*" http://public.gi.ucsc.edu/~anovak/outbox/jeffrey/data/
 ```
 
-### Building a vg graph
+## Building a vg graph
 <pre><code>vg construct -r <i>[fasta file]</i> -v <i>[vcf file]</i> > vg_graph.vg</code></pre>
 We are using vg graphs in xg/gcsa index pair format. To create this format run the following line.
 ```bash

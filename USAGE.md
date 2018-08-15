@@ -1,6 +1,6 @@
 # USAGE
 Instruction to runs this experiments.
-
+More info about how works [click here](https://github.com/binarySequoia/vg_recal#characterizing-mapping-quality-recalibration-approaches-in-a-variant-graph-genomics-tool).
 ### Dependecies
 * [vg](https://github.com/vgteam/vg)
 * Jupyter Notebook

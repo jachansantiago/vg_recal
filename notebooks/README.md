@@ -1,6 +1,8 @@
 # Notebooks 
 This folder contains useful notebook for data preprocessing, data analysis and for build, train and test models.
-
+## Go Back
+- [USAGE.md](https://github.com/binarySequoia/VG_Recal/blob/master/USAGE.md#usage)
+- [HOME](https://github.com/binarySequoia/vg_recal#characterizing-mapping-quality-recalibration-approaches-in-a-variant-graph-genomics-tool)
 ## [plot_svg.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/plot_svg.ipynb)
 
 Useful to plot train and test svgs (Q-Q plots and ROC) created by [`vg/script/plot-qq.R`](https://github.com/vgteam/vg/blob/master/scripts/plot-qq.R) and [`vg/script/plot-roc.R`](https://github.com/vgteam/vg/blob/master/scripts/plot-roc.R). This script load train SVGs from `data/svgs/train` and load test data from `data/svgs/test`.

@@ -14,15 +14,17 @@ This notebook take outputs tsv files from models to measure their performance us
 ## [train_test_model.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/train_test_model.ipynb)
 This notebook load compared reads from a json file and train a model per base pairs length. At the end saves a csv file with stats about test and training data. The model used by this notebook is a neural network with score, original, mapping qualities, secondary score size and identity as inputs.
 
-## [logistic_reg.ipynb] (https://github.com/binarySequoia/vg_recal/blob/master/notebooks/logistic_reg.ipynb)
+## [logistic_reg.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/logistic_reg.ipynb)
 This notebook runs a logistic regression with only original mapping quality as input.
 
-
-## [logistic_reg_3.ipynb] (https://github.com/binarySequoia/vg_recal/blob/master/notebooks/logistic_reg_3.ipynb)
+## [logistic_reg_3.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/logistic_reg_3.ipynb)
 This notebook runs a logistic regression with original mapping quality, score, secondary score size as input.
 
 ## [bow.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/bow.ipynb)
-This notebook contains a neural network with bag of words approach.
+This notebook contains a neural network with bag of words approach. Recieve as input only data from one base pairs length.
 
 ## [merge_data.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/merge_data.ipynb)
 This notebook contains a script that takes training or testing data with different base pairs size and merge together in one csv.
+
+## [bow_all_size.ipynb](https://github.com/binarySequoia/vg_recal/blob/master/notebooks/bow_all_size.ipynb)
+This notebook cointains a neural network with bag of words approach. The input os this network in the output csv file from `merge_data.ipynb`.

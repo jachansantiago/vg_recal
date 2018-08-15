@@ -19,9 +19,7 @@ wget -r -np -nH --cut-dirs=3 -R "index.html*" http://public.gi.ucsc.edu/~anovak/
 ```
 
 ### Building a vg graph
-<pre><code>
-vg construct -r <i>[fasta file]</i> -v <i>[vcf file]</i> > vg_graph.vg 
-</code></pre>
+<pre><code>vg construct -r <i>[fasta file]</i> -v <i>[vcf file]</i> > vg_graph.vg</code></pre>
 We are using vg graphs in xg/gcsa index pair format. To create this format run the following line.
 ```bash
 # store the graph in the xg/gcsa index pair

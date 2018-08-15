@@ -1,5 +1,5 @@
 # Characterizing Mapping Quality Recalibration Approaches in a Variant Graph Genomics Tool
-This is experiemt to measuare performance in vg recalibrate, testing different models. To know how re-run this code [click here](https://github.com/binarySequoia/VG_Recal/blob/master/USAGE.MD).
+This is experiemt to measuare performance in vg recalibrate, testing different models. To know how re-run this code [click here](https://github.com/binarySequoia/VG_Recal/blob/master/USAGE.md).
 
 ## Motivation
 Identifying DNA patterns can tell us useful information about any living being. Closely related organisms have similar DNA, while distantly related organisms have few similarities. Humans have extremely similar genomes; studying differences can help to identify particular variants that can cause illness. Vg is a variant graph-based alignment tool for DNA mapping using graph genome references; these graphs capture variation information from populations, which allows more accurate genome studies.

@@ -18,21 +18,6 @@ _Graph image was created using [Sequence TubeMap Tool](https://github.com/vgteam
 In this work, we create and benchmark models to predict the probabilities of mappings being wrong and compare our recalibration models against each other and against the original mapping quality scores. To build our dataset, we simulate sequences with errors from the reference graph and map these new sequences back into the graph, then label those mappings as correct or incorrect. We train our models to calculate when a mapping is wrong, then extract the probabilities from those predictions. Using these probabilities, we calculate mapping quality scores and compare them against the original scores calculated by vg using the Brier score.
 ![alt text](https://github.com/binarySequoia/VG_Recal/raw/master/doc/VG_RECALIBRATE_WORKFLOW.png "APPROACH WORKFLOW")
 
-## Models
-At the begining of this project we are using C++ to develop our models using vowpal-wabbit. But because we want to try more deep learning approaches we move to python for fast prototyping and when we got a good model load that model in a C++ framework. In this repo you can found implementation of sklearn and keras, but vowpal-wabbit implemetation you can found in this [special fork of vg](https://github.com/binarySequoia/vg).
-
-| model         | framework     |
-| ------------- |:-------------:|
-| Logistic Regression with mappinq quality and metadata  | vowpal-wabbit     |
-| Logistic Regression with Bag of words | vowpal-wabbit |
-| Logistic Regression with mems     | vowpal-wabbit     |
-| Logistic Regression with mems stats | vowpal-wabbit |
-| Logistic Regression with mappinq quality| sklearn |
-| Logistic Regression with mappinq quality and metadata | sklearn |
-| Neural Network with mapping quality and metadata | keras |
-| Neural Network with bag of words | keras |
-
-
 ## Discussion
 We test 5 different models with logistic regression using mapping quality information, mems, sequences, mems stats and a combination between mems and sequences. Our experiments show that logistic regression with mems improves by 5.23% the original mapping score given by vg in reads of length 100 base pairs but is not able to generalize well across lengths. But the Q-Q plot shows that the mems model has over confidence about its predictions.
 

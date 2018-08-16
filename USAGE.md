@@ -119,14 +119,29 @@ At the begining of this project we are using C++ to develop our models using vow
 | Neural Network with bag of words | keras |
 
 ### vowpal wabbit model
-Vowpal Wabbit models are inside in my [special fork of vg](https://github.com/binarySequoia/vg). 
+Vowpal Wabbit models are inside in my [special fork of vg](https://github.com/binarySequoia/vg). You can train using `vg recalibrate`.
+
+```bash
+vg recalibrate
+:'usage: vg recalibrate [options] --model learned.model mapped.gam > recalibrated.gam
+       vg recalibrate [options] --model learned.model --train compared.gam
+
+options:
+    -T, --train              read the input GAM file, and use the mapped_correctly flags from vg gamcompare to train a model
+    -m, --model FILE         load/save the model to/from the given file
+    -t, --threads N          number of threads to use
+    -b  --bow                bag of words as features
+    -e  --mems               add mems as features
+    -s  --memstats           add mems stats as features
+    -o  --nomapq             remove mapping quality features'
+```
 
 #### Train
 ```bash
 vg recalibrate --model recal.model --train train_compared_len100.gam
 ```
 #### Test
-`vg recalibrate` has multiples options for choose a model.
+`vg recalibrate` has multiple options for choose a model.
 ```bash
 # Prediction for training data
 vg recalibrate --model recal.model train_mapped_len100.gam > train_recalibrated.gam

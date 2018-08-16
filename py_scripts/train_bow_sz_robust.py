@@ -3,7 +3,7 @@ from models import *
 from keras.utils import to_categorical
 
 print("Loading Train data")
-train_df = pd.read_csv("big_bow_df.csv")
+train_df = pd.read_csv("../data/train_gamcompare/csv/big_bow_df.csv")
 
 y_train = to_categorical(train_df['correct'].values)
 
@@ -16,4 +16,4 @@ model.compile(loss='categorical_crossentropy', optimizer='SGD', metrics=['accura
 
 model.fit(X_train, y_train, batch_size=256, epochs=1, verbose=1, shuffle=True, validation_split=0.2)
 
-model.save("bow_model_sz_robust.h5")
+model.save("../data/models/bow_model_sz_robust.h5")

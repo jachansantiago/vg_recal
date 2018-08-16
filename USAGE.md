@@ -11,6 +11,9 @@ More info about how works [click here](https://github.com/binarySequoia/vg_recal
 - [Reads Simulation](#reads-simulation)
     * [Data Generation](#training-and-testing-data-generation)
     * [Data Labeling](#label-training-and-testing-data)
+- [Models](#models)
+   * [Vowpal Wabbit Models](#vowpal-wabbit-model)
+   * [other models](#other-models)
 - [jupyter notebook](#notebooks)
 - [py_scripts](#py_scripts)
 - [scripts](#scripts)
@@ -100,6 +103,51 @@ vg gamcompare -r 100 train_mapped_len100.gam train_sim_len100.gam > train_compar
 # Label Test reads
 vg gamcompare -r 100 test_mapped_len100.gam test_sim_len100.gam > test_compared_len100.gam
 ```
+
+## Models
+At the begining of this project we are using C++ to develop our models using vowpal-wabbit. But because we want to try more deep learning approaches we move to python for fast prototyping and when we got a good model load that model in a C++ framework. In this repo you can found implementation of sklearn and keras, but vowpal-wabbit implemetation you can found in this [special fork of vg](https://github.com/binarySequoia/vg).
+
+| model         | framework     |
+| ------------- |:-------------:|
+| Logistic Regression with mappinq quality and metadata  | vowpal-wabbit     |
+| Logistic Regression with Bag of words | vowpal-wabbit |
+| Logistic Regression with mems     | vowpal-wabbit     |
+| Logistic Regression with mems stats | vowpal-wabbit |
+| Logistic Regression with mappinq quality| sklearn |
+| Logistic Regression with mappinq quality and metadata | sklearn |
+| Neural Network with mapping quality and metadata | keras |
+| Neural Network with bag of words | keras |
+
+### vowpal wabbit model
+Vowpal Wabbit models are inside in my [special fork of vg](https://github.com/binarySequoia/vg). 
+
+#### Train
+```bash
+vg recalibrate --model recal.model --train train_compared_len100.gam
+```
+#### Test
+`vg recalibrate` has multiples options for choose a model.
+```bash
+# Prediction for training data
+vg recalibrate --model recal.model train_mapped_len100.gam > train_recalibrated.gam
+# Prediction for testing data
+vg recalibrate --model recal.model test_mapped_len100.gam > test_recalibrated.gam
+```
+#### Evaluate
+```bash
+# Load recalibrated data
+vg gamcompare -r 100 - simulated_len100.gam --tsv --aligner recal > stats_len100.tsv
+# Load original data
+vg gamcompare -r 100 mapped_len100.gam simulated_len100.gam --tsv --aligner orig | sed 1d >>stats_len100.tsv
+```
+#### Analyze Evaluation
+```bash
+Rscript vg/scripts/plot-qq.R stats_len100.tsv qq-plot_len100.svg
+Rscript vg/scripts/plot-roc.R stats_len100.tsv roc-plot_len100.svg
+```
+### other models
+Sklearn and keras models are in jupyter notebooks and py_script folders. We have pipeline to build `stats.tsv` for evaluate keras and sklearn models. After create the `stats.tsv` runs these [scripts](#analyze-evaluation) to analyze the performace of the models.
+
 ## Notebooks
 We have jupyter notebooks, that are part of our pipeline. If you want know more about it go to [`notebooks`](https://github.com/binarySequoia/vg_recal/tree/master/notebooks#notebooks)
 

@@ -3,31 +3,24 @@ import sys
 import re
 
 # train files regex
-sim_regex = re.compile("sim.*.gam")
-map_regex = re.compile("map.*.gam")
+com_regex = re.compile("*.gam")
 
 # test files regex
-tsim_regex = re.compile("tsim.*.gam")
-tmap_regex = re.compile("tmap.*.gam")
+tcom_regex = re.compile("*.gam")
 
-files = os.listdir()
+files = os.listdir("../data/train_gamcompare/gam/")
 
-sim_fn = list(filter(sim_regex.match, files))
-map_fn = list(filter(map_regex.match, files))
+com_fn = list(filter(com_regex.match, files))
 
-tsim_fn = list(filter(tsim_regex.match, files))
-tmap_fn = list(filter(tmap_regex.match, files))
+tcom_fn = list(filter(tcom_regex.match, files))
 
-sim_fn.sort()
-map_fn.sort()
+com_fn.sort()
 
-tsim_fn.sort()
-tmap_fn.sort()
+tcom_fn.sort()
 
-for s, m in zip(tsim_fn, tmap_fn):
-	sfname = s[:-4]
-	mfname = m[:-4]
-	#print("vg view -a {} > {}.json".format(s, sfname))
-	#print("vg view -a {} > {}.json".format(m, mfname))
-	#print("vg gamcompare -r 100 {} {} > tcompared_{}_{}.gam".format( m, s, mfname, sfname))
-	print("vg view -a tcompared_{}_{}.gam > tcompared_{}_{}.json".format(mfname, sfname, mfname, sfname))
+
+for c in tcom_fn:
+	cfname = c[:-4]
+	print("vg view -a {} > {}.json".format(c, cfname))
+
+
